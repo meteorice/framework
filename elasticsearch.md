@@ -1,14 +1,16 @@
-# Elasticsearch docker 集群搭建
+# Elasticsearch docker集群搭建
 
-## 问题
+## 要注意问题
 
-> jvm堆最大最小要直接配置成相等,比如: -Xms512m -Xmx512m
-> 映射的文件夹要 chmod 777 
+> jvm堆最大最小要直接配置成相等,比如: -Xms512m -Xmx512m 
+>
+> 映射的文件夹要 chmod 777
 
-## 上docker-compose.yml
+## 编写docker-compose
+
+### 上docker-compose.yml
 
 ```yaml
-
 version: "3"
 services:
   es3:
@@ -79,13 +81,11 @@ services:
 
 networks:
   esnet:
-
 ```
 
 ### node1.yml
 
 ```yaml
-
 bootstrap.memory_lock: true
 cluster.name: "es-cluster"
 node.name: node1
@@ -101,13 +101,11 @@ path.logs: /usr/share/elasticsearch/logs
 
 http.cors.enabled: true
 http.cors.allow-origin: "*"
-
 ```
 
 ### node2.yml
 
 ```yaml
-
 bootstrap.memory_lock: true
 cluster.name: "es-cluster"
 node.name: node2
@@ -123,13 +121,11 @@ path.logs: /usr/share/elasticsearch/logs
 
 http.cors.enabled: true
 http.cors.allow-origin: "*"
-
 ```
 
 ### node3.yml
 
 ```yaml
-
 bootstrap.memory_lock: true
 cluster.name: "es-cluster"
 node.name: node3
@@ -145,6 +141,5 @@ path.logs: /usr/share/elasticsearch/logs
 
 http.cors.enabled: true
 http.cors.allow-origin: "*"
-
-
 ```
+
