@@ -147,3 +147,21 @@ http.cors.enabled: true
 http.cors.allow-origin: "*"
 ```
 
+## 遇到的检查问题
+
+max virtual memory areas vm.max\_map\_count \[65530\] is too low, increase to at least \[262144\]
+
+1. 切换到root用户修改配置sysctl.conf
+
+   `vi /etc/sysctl.conf`
+
+2. 添加下面配置
+
+   `vm.max_map_count=655360`
+
+3. 并执行命令
+
+   `sysctl -p`
+
+4. 重新启动elasticsearch
+
