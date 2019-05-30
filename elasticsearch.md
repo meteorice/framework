@@ -218,5 +218,6 @@ failed to join {node1}{pPjTF86WSRKFil3Rt3eisg}{Ww9e2XQ-Qdip3xFXWyCtWQ}{172.28.0.
 "at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37) [elasticsearch-7.1.0.jar:7.1.0]", 
 "at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]", 
 "at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]", 
-"at java.lang.Thread.run(Thread.java:835) [?:?]"] }```
+"at java.lang.Thread.run(Thread.java:835) [?:?]"] }
+```
 
