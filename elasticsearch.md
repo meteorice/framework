@@ -17,30 +17,6 @@ description: elasticsearch 7.x   docker
 ```yaml
 version: "3"
 services:
-  es3:
-    container_name: es3
-    image: 'elasticsearch:7.1.0'
-    privileged: true
-    cap_add:
-      - SYS_PTRACE
-    environment:
-      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
-    ulimits:
-      memlock:
-        soft: -1
-        hard: -1
-    command:
-      - /home/elasticsearch/bin/elasticsearch
-    volumes:
-      - ./data3:/usr/share/elasticsearch/data
-      - ./node3.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - ./logs3:/usr/share/elasticsearch/logs:rw
-    ports:
-      - '9203:9200/tcp'
-      - '9303:9300/tcp'
-    networks:
-      - esnet
-
   es1:
     container_name: es1
     image: 'elasticsearch:7.1.0'
@@ -80,6 +56,30 @@ services:
     ports:
       - '9202:9200/tcp'
       - '9302:9300/tcp'
+    networks:
+      - esnet
+
+  es3:
+    container_name: es3
+    image: 'elasticsearch:7.1.0'
+    privileged: true
+    cap_add:
+      - SYS_PTRACE
+    environment:
+      - "ES_JAVA_OPTS=-Xms1024m -Xmx1024m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    command:
+      - /home/elasticsearch/bin/elasticsearch
+    volumes:
+      - ./data3:/usr/share/elasticsearch/data
+      - ./node3.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./logs3:/usr/share/elasticsearch/logs:rw
+    ports:
+      - '9203:9200/tcp'
+      - '9303:9300/tcp'
     networks:
       - esnet
 

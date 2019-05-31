@@ -25,6 +25,6 @@ output.elasticsearch:
 
 ```bash
 
-nphup ./metricbeat -e -c metricbeat.yml -d "publish"  >> start.out 2>&1 &
+nohup ./metricbeat -e -c metricbeat.yml -d "publish"  >> start.out 2>&1 &
 
 ```
